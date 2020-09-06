@@ -20,12 +20,15 @@
 
   <!-- bootstrap cdns -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
-
+   
    
 <!--Font Awesome-->
   <script src="https://kit.fontawesome.com/4de4f27bdf.js" crossorigin="anonymous"></script>
 
+
+  <!-- BLOTTER.JS -->
+  <script src="blotter.min.js"></script>
+  <script src="slidingDoorMaterial.js"></script>
 </head>
 
 <body>
@@ -74,8 +77,8 @@
     <div class="mail">
       <h1>If there's anything else you'd like to know contact me!
         <br>
-        <br>
         <a href="mailto: barale.simona13@gmail.com">barale.simona13@gmail.com</a>
+        <div id="blotter" style="margin-top: 20px"></div>
     </div>
     <!--mail contatto fine-->
     <!--footer inizio-->
@@ -112,6 +115,22 @@
     <!--footer fine-->
 
   </div>
+
+  <script>
+    var text = new Blotter.Text("Contact me!", {
+      size : 50,
+      fill : "#0f0f0f"
+    });
+
+    var material = new Blotter.SlidingDoorMaterial();
+
+    var blotter = new Blotter(material, { texts : text });
+
+    var scope = blotter.forText(text);
+
+    var div = document.querySelector('#blotter');
+    scope.appendTo(div);
+  </script>
 </body>
 
 </html>
