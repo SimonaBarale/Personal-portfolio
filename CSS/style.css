@@ -1,0 +1,672 @@
+/*--------------- generico --------------- */
+
+/*  COLORI:
+    Rosso: #bd413e
+    Bianco: #fff
+    Nero: #0f0f0f
+
+    FONT:
+    Facktum-wideSemiBold: Faktum-bold
+    Facktum-wideRegular: Faktum-regular
+
+    FONT SIZE:  WEB / TABLET / MOBILE
+    Nav --> 20px / 18px
+    Resize --> 36px;
+    ParteCentrale --> 40px / 32px / 24px
+    Footer --> 20px / 18px
+    Mail --> 40px / 32px /24px
+    Indirizzo email --> 40px / 18px
+    Progetto --> 40px / 24px
+    Left title --> 40px / 32px
+    Left span --> 20px / 18px
+    Skip --> 20px / 18px
+
+*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff !important;
+  color: #0f0f0f !important;
+}
+
+.wrapper {
+  cursor: url('../IMMAGINI/cursor.png') 16 16, auto;
+  font-family: Faktum-regular;
+}
+
+a {
+  cursor: url('../IMMAGINI/cursor.png') 16 16, auto;
+}
+
+@font-face {
+  font-family: Faktum-bold;
+  src: url(Faktum-WideSemiBold.otf);
+}
+
+@font-face {
+  font-family: Faktum-regular;
+  src: url(Faktum-WideRegular.otf);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.yellow {
+  color: #bd413e;
+}
+
+.spaziatura {
+  height: 15vh;
+}
+
+.lineadivisore {
+  height: 0.5px;
+  width: 100%;
+  position: fixed;
+  top: 15vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.lineadivisorefooter {
+  height: 0.5px;
+  width: 100%;
+  position: fixed;
+  bottom: 15vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.lineadivisorefooter-scroll {
+  height: 0.5px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media(max-width: 768px) {
+  .lineadivisore {
+    top: 10vh;
+  }
+  .lineadivisorefooter {
+    display: none;
+  }
+  .lineadivisorefooter-scroll {
+    display: none;
+  }
+  .spaziatura {
+    height: 10vh;
+  }
+}
+
+.noMargin {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/*--------------- navigazione --------------- */
+
+nav {
+  width: 100%;
+  background: #fff;
+  height: 15vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  font-family: Faktum-bold;
+  font-size: 20px;
+}
+
+nav #simona {
+  float: left;
+  display: block;
+  margin-left: 80px;
+  line-height: 15vh;
+}
+
+nav #simona a {
+  color: #0f0f0f;
+  transition: all 0.3s ease-out;
+}
+
+nav #simona a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+nav #menu {
+  float: left;
+  right: 80px;
+  position: fixed;
+}
+
+nav #menu li {
+  padding-left: 40px;
+  display: inline-block;
+  line-height: 15vh;
+  position: relative;
+}
+
+nav #menu li a {
+  color: #0f0f0f;
+  transition: all 0.3s ease-out;
+}
+
+nav #menu li a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+#toggle {
+  position: absolute;
+  right: 24px;
+  top: 20px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  float: right;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#resize {
+  z-index: 1;
+  top: 0px;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0.0;
+  transition: all 0.5s ease-out;
+}
+
+#resize #menu {
+  position: fixed;
+  right: 100vw;
+  bottom: 10vh;
+  text-align: end;
+  display: table-cell;
+  vertical-align: center;
+  transition: all 0.5s ease-out;
+}
+
+#resize.active #menu {
+  right: 10vw;
+}
+
+#resize #menu li {
+  display: block;
+  text-align: end;
+  padding: 10px 0;
+  font-size: 36px;
+  min-height: 50px;
+  transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+  margin-top: 140px;
+}
+
+#resize #menu li a {
+  color: #0f0f0f;
+}
+
+#resize #menu li a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+/*CLASSE CHE SI AGGIUNGE QUANDO PREMO IL MENU*/
+
+#resize.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*BURGER MENU*/
+
+#toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #0f0f0f;
+}
+
+/*PULSANTE PER CHIUSURA MENU*/
+
+#resize .close-btn {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
+
+#resize .close-btn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  position: relative;
+  background: #0f0f0f;
+}
+
+#resize .close-btn span:nth-child(1) {
+  transform: rotate(-45deg) translate(0, 2px);
+}
+
+#resize .close-btn span:nth-child(2) {
+  transform: rotate(45deg) translate(0, -2px);
+}
+
+@media(max-width: 768px) {
+  nav #menu {
+    display: none;
+  }
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 6px;
+    margin-right: 4px;
+  }
+  nav {
+    height: 10vh;
+    position: fixed;
+  }
+  nav #simona {
+    margin-left: 24px;
+    line-height: 10vh;
+  }
+  nav #simona a {
+    font-size: 18px;
+  }
+}
+
+/*--------------- Homepage --------------- */
+
+.partecentrale {
+  height: 70vh;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+}
+
+.partecentrale h1 {
+  margin-left: 80px;
+  margin-right: 80px;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.partecentrale h1 span {
+  color: #bd413e;
+}
+
+@media(max-width: 1300px) {
+  .partecentrale h1 {
+    font-size: 32px;
+  }
+}
+
+@media(max-width: 768px) {
+  .partecentrale {
+    height: auto;
+    min-height: 75vh;
+    align-items: start;
+  }
+  .partecentrale h1 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    line-height: 40px;
+  }
+}
+
+/*--------------- footer --------------- */
+
+#footer {
+  height: 15vh;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  position: fixed;
+  bottom: 0px;
+  background: #fff;
+  font-family: Faktum-bold;
+  font-size: 20px;
+}
+
+#footer-scroll {
+  height: 15vh;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: Faktum-bold;
+  font-size: 20px;
+}
+
+#colonnalingue {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 15vh;
+}
+
+#colonnalingue a {
+  color: #0f0f0f;
+  transition: all 0.3s ease-out;
+}
+
+#colonnalingue a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+#colonnasocial {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 15vh;
+}
+
+#socialnetworks {
+  padding-top: 15px;
+}
+
+#socialnetworks li {
+  padding-left: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+#socialnetworks li a {
+  color: #0f0f0f;
+  transition: all 0.3s ease-out;
+}
+
+#socialnetworks li a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+.linea {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  #footer {
+    padding-left: 0;
+    padding-right: 0;
+    position: static;
+    font-size: 18px;
+  }
+  #footer-scroll {
+    padding-left: 0;
+    padding-right: 0;
+    position: static;
+    font-size: 18px;
+  }
+  #colonnalingue {
+    justify-content: start;
+    margin-left: 24px;
+  }
+  #colonnasocial {
+    justify-content: flex-end;
+    margin-right: 24px;
+  }
+  #socialnetworks {
+    padding-inline-start: 0px;
+  }
+  #socialnetworks li {
+    padding-left: 10px;
+  }
+  .linea {
+    display: block;
+    height: 0.5px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*--------------- contatti --------------- */
+
+.mail {
+  height: 70vh;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+}
+
+.mail h1 {
+  margin-left: 80px;
+  margin-right: 80px;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.mail h1 a {
+  color: #0f0f0f;
+  transition: all 0.3s ease-out;
+}
+
+.mail h1 a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+@media(max-width: 1245px) {
+  .mail h1 {
+    font-size: 32px;
+  }
+}
+
+@media(max-width: 768px) {
+  .mail {
+    height: auto;
+    min-height: 75vh;
+    align-items: start;
+  }
+  .mail h1 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    line-height: 40px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .mail h1 a {
+    font-size: 18px;
+  }
+}
+
+/*--------------- lavori --------------- */
+
+.progetto {
+  height: 15vh;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+}
+
+.progetto a {
+  color: #0f0f0f;
+  font-size: 40px;
+  transition: all 0.3s ease-out;
+}
+
+.progetto a:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+@media(max-width: 768px) {
+  .progetto {
+    height: 10vh;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .progetto a {
+    font-size: 24px;
+  }
+  #works {
+    height: auto;
+    min-height: 75vh;
+  }
+}
+
+/*--------------- about e scheda lavoro --------------- */
+
+#contenitore {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#centro {
+  margin-bottom: 15vh;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 10vh;
+}
+
+#left {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+#left span {
+  color: #0f0f0f;
+  font-size: 20px;
+}
+
+#right {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.frame-mobile {
+  display: none;
+}
+
+#left .title {
+  color: #0f0f0f;
+  font-size: 40px;
+}
+
+#controlli {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#controlli-row {
+  padding-right: 80px;
+  padding-left: 80px;
+  width: 100%;
+  height: 15vh;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#back {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#next {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.skip {
+  color: #0f0f0f;
+  font-size: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.skip:hover {
+  color: #bd413e;
+  text-decoration: none;
+}
+
+#ytplayer {
+  height: 100%;
+  width: 100%;
+}
+
+@media(max-width: 768px) {
+  #centro {
+    margin-bottom: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
+    margin-top: 24px;
+  }
+  #left {
+    padding-right: 0;
+  }
+  #left span {
+    font-size: 18px;
+  }
+  #right {
+    padding-top: 24px;
+    padding-left: 0;
+  }
+  .frame {
+    display: none;
+  }
+  .frame-mobile {
+    display: inherit;
+    width: 100%;
+    height: 300px;
+  }
+  #left .title {
+    font-size: 32px;
+  }
+  #controlli {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 2vh;
+  }
+  #controlli-row {
+    padding-right: 24px;
+    padding-left: 24px;
+    height: 10vh;
+  }
+  .skip {
+    font-size: 14px;
+  }
+  .skip i{
+    display: none;
+  }
+  #ytplayer {
+    height: auto;
+    width: 100%;
+  }
+}
