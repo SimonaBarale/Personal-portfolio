@@ -43,12 +43,12 @@ a {
 
 @font-face {
   font-family: Faktum-bold;
-  src: url(Faktum-WideSemiBold.otf);
+  src: url(Faktum-WideSemiBold.woff);
 }
 
 @font-face {
   font-family: Faktum-regular;
-  src: url(Faktum-WideRegular.otf);
+  src: url(Faktum-WideRegular.woff);
 }
 
 ::-webkit-scrollbar {
